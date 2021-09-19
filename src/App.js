@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import {Tabs, Page, Text} from '@geist-ui/react';
 import './App.css';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Page>
+      <Page.Header>
+        <h1>gryphy</h1>
+        <Text><em>A Gryphons best friend</em></Text>
+        <Tabs initialValue='1'>
+          <Tabs.Item label="home" value="1"><Home/></Tabs.Item>
+          <Tabs.Item label="tools" value="2"></Tabs.Item>
+        </Tabs>
+      </Page.Header>
+      <Page.Footer>
+        <p className="inactive"> <strong>&copy; Gryphy 2021</strong> · Not affiliated with the University of Guelph. · <a href='/about'>More Information</a></p>
+      </Page.Footer>
+    </Page>
   );
 }
 
